@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import java.io.File;
 import java.time.Duration;
 
 public class Tests {
@@ -28,7 +28,8 @@ public class Tests {
 
     @BeforeAll
     public static void setDriver(){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\koca\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        //added driver into project so you don't have to change path when you run it
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + File.separator + "drivers" + File.separator + "chromedriver.exe");
     }
 
     @BeforeEach
